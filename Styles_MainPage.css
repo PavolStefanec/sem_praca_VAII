@@ -191,3 +191,17 @@ p{
         flex-direction: column;
     }
 }
+
+.text-box-WW{
+    text-align: left;
+
+}
+
+.carousel {
+    max-height: 500px;
+    width: 50%;
+}
+
+.carousel-inner{
+    max-height: 500px;
+}

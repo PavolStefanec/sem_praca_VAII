@@ -8,15 +8,24 @@ body {
     background-color: dimgrey;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 h1 {
     color: red;
     text-align: center;
-    font-size: 500%;
+    font-size: 600%;
+    font-family: Papyrus;
+    font-weight: bolder;
 }
 
 h2 {
-    color: aqua;
+    color: darkorange;
     text-align: center;
+    font-family: Papyrus;
+    font-weight: bolder;
     font-size: xxx-large;
 }
 

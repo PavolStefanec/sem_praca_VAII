@@ -3,112 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bands</title>
+    <title>Metal world</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="Styles_MainPage.css">
+    <script src="https://kit.fontawesome.com/7558fd3819.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Metal world</h1>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="MainPage.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="BandsPage.html">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Bands
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">All</a></li>
-                            <li><a class="dropdown-item" href="#">metalcore</a></li>
-                            <li><a class="dropdown-item" href="#">progressive metal</a></li>
-                        </ul>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ShopPage.html">Shop</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">about</a>
-                </li>
+<section class="header">
+    <nav>
+        <a href="MainPage.html"><img src="images\logo.png" alt="logo"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fas fa-times-circle" onclick="hideNav()"></i>
+            <ul>
+                <li><a href="MainPage.html">HOME</a></li>
+                <li><a href="BandsPage.html">BANDS</a></li>
+                <li><a href="ShopPage.html">SHOP</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">CONTACT</a></li>
             </ul>
-            <span class="navbar-text">
-      </span>
         </div>
-    </div>
-</nav>
+        <i class="fas fa-bars" onclick="showNav()"></i>
+    </nav>
 
-<h2>Modern metal bands</h2>
+    <div class="text-box">
+        <h1>Bands</h1>
+        <p>SCROLL DOWN FOR MORE</p>
+    </div>
+</section>
 
 <!--                    TILES                       -->
-<div class="container">
+<section class="bands-tiles">
     <div class="row">
-        <div class="col"></div>
-        <div class="col">
+        <div class="bands-col">
             <img src="images\ww.jpg" class="img-fluid mx-auto d-block" alt="band1">
-            <a class="nav-link" href="WWPage.html">
-            <p>Wage war</p>
-            </a>
+            <a class="nav-link" href="WWPage.html"><p>Wage war</p></a>
         </div>
-        <div class="col">
+        <div class="bands-col">
             <img src="images\wss.jpg" class="img-fluid mx-auto d-block" alt="band2">
-            <a class="nav-link" href="WSSPage.html">
-               <p>While She Sleeps</p>
-            </a>
+            <a class="nav-link" href="WSSPage.html"><p>While She Sleeps</p></a>
         </div>
-        <div class="col">
+        <div class="bands-col">
             <img src="images\periphery.jpg" class="img-fluid mx-auto d-block" alt="band3">
-            <a class="nav-link" href="Periphery.html">
-            <p>Periphery</p>
-            </a>
+            <a class="nav-link" href="Periphery.html"><p>Periphery</p></a>
         </div>
-        <div class="col"></div>
     </div>
     <br>
     <div class="row">
-        <div class="col"></div>
-        <div class="col">
+        <div class="bands-col">
             <img src="images\amaranthe.jpg" class="img-fluid mx-auto d-block" alt="band4">
             <p>Amaranthe</p>
         </div>
-        <div class="col">
+        <div class="bands-col">
             <img src="images\bfw.jpg" class="img-fluid mx-auto d-block" alt="band4">
             <p>Bleed From Within</p>
         </div>
-        <div class="col">
+        <div class="bands-col">
             <img src="images\oc.jpg" class="img-fluid mx-auto d-block" alt="band4">
             <p>Orbit Culture</p>
         </div>
-        <div class="col"></div>
     </div>
     <br>
     <br>
     <div class="row">
-        <div class="col"></div>
-        <div class="col">
+        <div class="bands-col">
             <img src="images\epica.jpg" class="img-fluid mx-auto d-block" alt="band4">
             <p>Epica</p>
         </div>
-        <div class="col">
+        <div class="bands-col">
             <img src="images\abr.jpg" class="img-fluid mx-auto d-block" alt="band4">
             <p>August Burns Red</p>
         </div>
-        <div class="col">
+        <div class="bands-col">
             <img src="images\ink.jpg" class="img-fluid mx-auto d-block" alt="band4">
             <p>Ice Nine Kills</p>
         </div>
-        <div class="col"></div>
     </div>
-</div>
+</section>
 
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showNav(){
+        navLinks.style.right = "0";
+    }
+    function hideNav(){
+        navLinks.style.right = "-200px";
+    }
+</script>
 
 </body>
 </html>

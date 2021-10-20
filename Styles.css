@@ -50,7 +50,7 @@ nav img {
     content: '';
     width: 0%;
     height: 2px;
-    background: #f44336;
+    background: red;
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -197,6 +197,7 @@ p{
 
 .band-col {
     flex-basis: 50%;
+    flex-direction: column;
     border-radius: 10px;
     margin-bottom: 5%;
     padding: 20px 12px;
@@ -238,10 +239,6 @@ p{
     font-weight: bold;
     font-size: 40px;
 
-}
-
-.carousel-indicators {
-    size: letter;
 }
 
 /*

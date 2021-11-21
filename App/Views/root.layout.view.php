@@ -14,13 +14,13 @@
 <body>
 <section class="header">
     <nav>
-        <a href="MainPage.html"><img src= "<?= \App\Config\Configuration::UPLOAD_DIR . 'logo.png'?>" alt="logo"></a>
+        <a href="?c=home"><img src= "<?= \App\Config\Configuration::UPLOAD_DIR . 'logo.png'?>" alt="logo"></a>
         <div class="nav-links" id="navLinks">
             <i class="fas fa-times-circle" onclick="hideNav()"></i>
             <ul>
                 <li><a href="?c=home">HOME</a></li>
-                <li><a href="?c=home&a=bands">BANDS</a></li>
-                <li><a href="ShopPage.html">SHOP</a></li>
+                <li><a href="?c=band&a=bands">BANDS</a></li>
+                <li><a href="?c=shop&a=shop">SHOP</a></li>
                 <li><a href="?c=home&a=about">ABOUT</a></li>
                 <li><a href="?c=home&a=contact">CONTACT</a></li>
                 <?php if (!App\Auth::isLogged()) {?>

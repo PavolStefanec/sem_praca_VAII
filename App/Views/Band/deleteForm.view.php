@@ -22,7 +22,7 @@
                 </div>
             <?php } ?>
 
-            <form method="post" action="?c=home&a=deleteBand">
+            <form method="post" action="?c=band&a=deleteBand">
                 <select class="form-select" aria-label="Default select example" name="id">
                     <option selected>Select band</option>
                     <?php foreach ($data['bands'] as $band) {?>

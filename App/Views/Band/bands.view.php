@@ -16,9 +16,9 @@
     <h1>Bands</h1>
 
     <?php if (App\Auth::isLogged()) {?>
-        <a href="?c=home&a=bandForm" type="button" class="btn btn-primary">Add new</a>
-        <a href="?c=home&a=modifyForm" type="button" class="btn btn-primary">Modify</a>
-        <a href="?c=home&a=deleteForm" type="button" class="btn btn-primary">Delete</a>
+        <a href="?c=band&a=bandForm" type="button" class="btn btn-primary">Add new</a>
+        <a href="?c=band&a=modifyForm" type="button" class="btn btn-primary">Modify</a>
+        <a href="?c=band&a=deleteForm" type="button" class="btn btn-primary">Delete</a>
     <?php } ?>
 
     <?php
@@ -29,7 +29,7 @@
         <?php } ?>
             <div class="bands-col">
                 <img src="<?= \App\Config\Configuration::UPLOAD_DIR . $band->getLogoSrc()?>" class="img-fluid mx-auto d-block" alt="band1">
-                <a class="nav-link" href="?c=home&a=bandPage&parId=<?= $band->getId() ?>"><p><?= $band->getName() ?></p></a>
+                <a class="nav-link" href="?c=band&a=bandPage&parId=<?= $band->getId() ?>"><p><?= $band->getName() ?></p></a>
             </div>
         <?php if ($counter % 3 == 2) { ?>
             </div>

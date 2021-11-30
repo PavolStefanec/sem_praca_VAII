@@ -32,7 +32,7 @@ class Registration extends Model
        $mail = self::getAll('mail = ?', [ $parMail ]);
        if (count($mail) == 0)
            return false;
-
+        return true;
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php /** @var Array $data */ ?>
 
+
 <div class="text-box">
     <h1>Create account</h1>
     <p>scroll down</p>
@@ -40,11 +41,83 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput2" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="password" id="exampleFormControlInput2" required>
+                    <input type="password" class="form-control" name="password"
+                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id="password" required>
+                    <i class="fas fa-eye-slash" id="icon_inv" onclick="toggle_visibility()"></i>
+                    <i class="fas fa-eye" id="icon_vis" onclick="toggle_visibility()"></i>
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary">Register</button>
                 </div>
+                <div id="message">
+                    <h3>Password should contain the following:</h3>
+                    <p id="lower_case" class="invalid">A <b>lowercase</b> letter</p>
+                    <p id="upper_case" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                    <p id="number" class="invalid">A <b>number</b></p>
+                    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                </div>
+                <script>
+                    let myInput = document.getElementById("password");
+                    let letter = document.getElementById("upper_case");
+                    let capital = document.getElementById("lower_case");
+                    let number = document.getElementById("number");
+                    let length = document.getElementById("length");
+
+                    // myInput.onfocus = function() {
+                    //     document.getElementById("message").style.display = "block";
+                    // }
+                    //
+                    // myInput.onblur = function() {
+                    //     document.getElementById("message").style.display = "none";
+                    // }
+
+                    myInput.onkeyup = function() {
+                        const lowerCaseLetters = /[a-z]/g;
+                        if(myInput.value.match(lowerCaseLetters)) {
+                            letter.classList.remove("invalid");
+                            letter.classList.add("valid");
+                        } else {
+                            letter.classList.remove("valid");
+                            letter.classList.add("invalid");
+                        }
+                        const upperCaseLetters = /[A-Z]/g;
+                        if(myInput.value.match(upperCaseLetters)) {
+                            capital.classList.remove("invalid");
+                            capital.classList.add("valid");
+                        } else {
+                            capital.classList.remove("valid");
+                            capital.classList.add("invalid");
+                        }
+                        const numbers = /[0-9]/g;
+                        if(myInput.value.match(numbers)) {
+                            number.classList.remove("invalid");
+                            number.classList.add("valid");
+                        } else {
+                            number.classList.remove("valid");
+                            number.classList.add("invalid");
+                        }
+                        if(myInput.value.length >= 8) {
+                            length.classList.remove("invalid");
+                            length.classList.add("valid");
+                        } else {
+                            length.classList.remove("valid");
+                            length.classList.add("invalid");
+                        }
+                    }
+
+                    function toggle_visibility() {
+                        let x = document.getElementById("password");
+                        if (x.type === "password") {
+                            x.type = "text";
+                            document.getElementById("icon_inv").style.visibility = "visible"
+                            document.getElementById("icon_vis").style.visibility = "hidden"
+                        } else {
+                            x.type = "password";
+                            document.getElementById("icon_inv").style.visibility = "hidden"
+                            document.getElementById("icon_vis").style.visibility = "visible"
+                        }
+                    }
+                </script>
             </form>
         </div>
     </div>

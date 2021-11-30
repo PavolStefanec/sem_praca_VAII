@@ -33,7 +33,7 @@ class AuthController extends AControllerRedirect
         } else if ($login == null and $password == null) {
             $this->redirect('auth', 'loginForm');
         } else {
-            $this->redirect('auth','loginForm',['error' => 'bleeee']);
+            $this->redirect('auth','loginForm',['error' => 'Incorrect username or password!!!']);
         }
     }
 
@@ -59,9 +59,17 @@ class AuthController extends AControllerRedirect
         $surname = $this->request()->getValue('surname');
         $userName = $this->request()->getValue('username');
         $password = $this->request()->getValue('password');
+
+        if ($mail == "" or $name == "" or $surname == "" or $userName == "" or $password == "")
+        {
+            $this->redirect('auth', 'registration', ['error'=>'One or more fields are empty!!!']);
+            return;
+        }
+
         if (Registration::isTaken($mail))
         {
-            $this->redirect('auth', 'registration', ['error'=>'Error']);
+            $this->redirect('auth', 'registration', ['error'=>'This email is already taken!!!']);
+            return;
         }
 
         $newUser = new Registration();
@@ -73,6 +81,6 @@ class AuthController extends AControllerRedirect
 
         $newUser->save();
 
-        $this->redirect('auth', 'loginForm', ['message'=>'account succesfully created']);
+        $this->redirect('auth', 'loginForm', ['message'=>'Account succesfully created']);
     }
 }

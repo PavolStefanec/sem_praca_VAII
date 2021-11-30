@@ -2,12 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Config\Configuration;
-use App\Core\AControllerBase;
-use App\Models\Bands;
-use App\Models\Bands_Imgs;
 use App\Models\News;
-use App\Models\Registration;
 use App\Models\Shop;
 
 /**

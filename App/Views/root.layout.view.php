@@ -6,6 +6,7 @@
     <title>Metal world</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+<!--    <script src="../../script.js"></script>-->
     <style>
         <?php include "public/css.css" ?>
     </style>
@@ -32,8 +33,23 @@
             </ul>
         </div>
         <i class="fas fa-bars" onclick="showNav()"></i>
+        <!-- functions which are hiding the navigation -->
+        <script>
+            let navLinks = document.getElementById("navLinks");
+
+            function showNav(){
+                // navLinks.style.right = "0";
+                navLinks.style.visibility = "visible";
+            }
+            function hideNav(){
+                // navLinks.style.right = "-200px";
+                navLinks.style.visibility = "hidden";
+            }
+        </script>
     </nav>
 </section>
+
+
 
 <?= $contentHTML?>
 

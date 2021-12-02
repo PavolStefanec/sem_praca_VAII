@@ -27,12 +27,15 @@ class AuthController extends AControllerRedirect
     public function login() {
         $login = $this->request()->getValue('username');
         $password = $this->request()->getValue('password');
+
+        if ($login == "" or $password == "") {
+            $this->redirect('auth', 'loginForm', ['error' => 'Incorrect username or password!!!']);
+        }
         $logged = Auth::login($login,$password);
         if ($logged) {
             $this->redirect('home');
-        } else if ($login == null and $password == null) {
-            $this->redirect('auth', 'loginForm');
-        } else {
+        }
+        else {
             $this->redirect('auth','loginForm',['error' => 'Incorrect username or password!!!']);
         }
     }

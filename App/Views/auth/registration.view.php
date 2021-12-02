@@ -50,11 +50,11 @@
                     <button type="submit" class="btn btn-primary">Register</button>
                 </div>
                 <div id="message">
-                    <h3>Password should contain the following:</h3>
-                    <p id="lower_case" class="invalid">A <b>lowercase</b> letter</p>
-                    <p id="upper_case" class="invalid">A <b>capital (uppercase)</b> letter</p>
-                    <p id="number" class="invalid">A <b>number</b></p>
-                    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                    <h3>Password should contain:</h3>
+                    <p id="lower_case" class="invalid">At least 1 lowercase letter</p>
+                    <p id="upper_case" class="invalid">At least 1 uppercase letter</p>
+                    <p id="number" class="invalid">At least 1 number</p>
+                    <p id="length" class="invalid">At least 8 characters</p>
                 </div>
                 <script>
                     let myInput = document.getElementById("password");
@@ -63,13 +63,13 @@
                     let number = document.getElementById("number");
                     let length = document.getElementById("length");
 
-                    // myInput.onfocus = function() {
-                    //     document.getElementById("message").style.display = "block";
-                    // }
-                    //
-                    // myInput.onblur = function() {
-                    //     document.getElementById("message").style.display = "none";
-                    // }
+                    myInput.onfocus = function() {
+                        document.getElementById("message").style.visibility = "visible";
+                    }
+
+                    myInput.onblur = function() {
+                        document.getElementById("message").style.visibility = "hidden";
+                    }
 
                     myInput.onkeyup = function() {
                         const lowerCaseLetters = /[a-z]/g;
@@ -106,6 +106,8 @@
                     }
 
                     function toggle_visibility() {
+                        document.getElementById("message").style.visibility = "visible";
+
                         let x = document.getElementById("password");
                         if (x.type === "password") {
                             x.type = "text";
@@ -117,6 +119,11 @@
                             document.getElementById("icon_vis").style.visibility = "visible"
                         }
                     }
+
+                    setInterval(function(){
+
+                    )
+                    }, 1000);
                 </script>
             </form>
         </div>

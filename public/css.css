@@ -32,8 +32,6 @@ nav img {
 .nav-links {
     flex: 1;
     text-align: right;
-    visibility: hidden;
-    right: 0;
 }
 .nav-links ul li {
     list-style: none;
@@ -88,13 +86,20 @@ nav .fas {
 @media (max-width: 700px) {
     .header {
         width: 100%;
+        height: 100%;
     }
+
+    .text-box {
+        margin-top: 100px;
+    }
+
     .text-box h1{
-        font-size: 30px;
+        font-size: 80px;
     }
 
     .text-box p{
-        font-size: 10px;
+        font-size: 30px;
+        flex-flow: wrap;
     }
     .nav-links ul li {
         display: block;
@@ -105,10 +110,10 @@ nav .fas {
         height: 100vh;
         width: 200px;
         top: 0;
-        right: -200px;
         text-align: left;
         z-index: 2;
         transition: 1s;
+        visibility: hidden;
     }
     nav .fas {
         display: block;
@@ -116,9 +121,16 @@ nav .fas {
         margin: 10px;
         font-size: 22px;
         cursor: pointer;
+        z-index: 1;
     }
+
     .nav-links ul {
         padding: 30px;
+    }
+
+    .fa-chevron-down:before {
+        flex-direction: column;
+        font-size: 30%;
     }
 }
 
@@ -258,6 +270,7 @@ p{
 
 .form-label {
     color: red;
+    font-size: 20px;
 }
 
 .container .form-block {
@@ -324,21 +337,24 @@ input {
 
 /* The message box is shown when the user clicks on the password field */
 #message {
-    display:none;
     color: #000;
     position: relative;
     padding: 20px;
     margin-top: 10px;
     display: block;
+    visibility: hidden;
 }
 
 #message h3 {
-    position: center;
+    color: orange;
+    justify-content: right;
 }
 
 #message p {
     padding: 10px 35px;
-    font-size: 18px;
+    font-size: 20px;
+    justify-content: right;
+    font-weight: lighter;
 }
 
 /* Add a green text color and a checkmark when the requirements are right */
@@ -354,7 +370,7 @@ input {
 
 /* Add a red text color and an "x" icon when the requirements are wrong */
 .invalid {
-    color: orange;
+    color: red;
 }
 
 /*.invalid:before {*/
@@ -370,7 +386,7 @@ input {
 .mb-3 i {
     position: absolute;
     right: 15px;
-    top: 50px;
+    top: 55px;
     color: gray;
     transition: 0.25s;
 }

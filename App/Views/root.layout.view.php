@@ -49,8 +49,6 @@
     </nav>
 </section>
 
-
-
 <?= $contentHTML?>
 
 </body>

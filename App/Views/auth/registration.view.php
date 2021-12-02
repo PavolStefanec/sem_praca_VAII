@@ -119,11 +119,6 @@
                             document.getElementById("icon_vis").style.visibility = "visible"
                         }
                     }
-
-                    setInterval(function(){
-
-                    )
-                    }, 1000);
                 </script>
             </form>
         </div>

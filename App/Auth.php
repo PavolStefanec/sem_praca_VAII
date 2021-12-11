@@ -9,7 +9,7 @@ class Auth
     {
         $allUsers = Registration::getAll();
         foreach ($allUsers as $user) {
-            if ($username == $user->getUserName() && $password == $user->getPassword()) {
+            if ($username == $user->getUserName() && password_verify($password,  $user->getPassword())) {
                 $_SESSION['userID'] = $user->getId();
                 return true;
             }

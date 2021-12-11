@@ -80,7 +80,7 @@ class AuthController extends AControllerRedirect
         $newUser->setMail($mail);
         $newUser->setSurname($surname);
         $newUser->setUserName($userName);
-        $newUser->setPassword($password);
+        $newUser->setPassword(password_hash($password, PASSWORD_DEFAULT));
 
         $newUser->save();
 

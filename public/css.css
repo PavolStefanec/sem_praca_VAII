@@ -165,7 +165,8 @@ p{
 }
 
 .news-col{
-    flex-basis: 31%;
+    position: relative;
+    flex-basis: 25%;
     background: #303030;
     border-radius: 10px;
     margin-bottom: 5%;
@@ -178,6 +179,30 @@ p{
     box-shadow: 0 0 60px 0px rgba(200,200,200,0.8);
 }
 
+.news-col .fas {
+    position: absolute;
+    color: red;
+    transition: 0.5s;
+    font-size: xxx-large;
+}
+
+.news-col .fas:hover {
+    position: absolute;
+    color: orange;
+    text-shadow: 0 0 20px orange;
+    font-size: xxx-large;
+}
+
+.news-col .fa-cog {
+    right: 30px;
+    bottom: 270px;
+}
+
+.news-col .fa-minus-circle {
+    left: 30px;
+    bottom: 270px;
+}
+
 .bands-tiles{
     width: 80%;
     margin: auto;
@@ -186,6 +211,7 @@ p{
 }
 
 .bands-col{
+    position: relative;
     flex-basis: 25%;
     background: #303030;
     border-radius: 10px;
@@ -197,6 +223,30 @@ p{
 }
 .bands-col:hover{
     box-shadow: 0 0 60px 0px rgba(200,200,200,0.8);
+}
+
+.bands-col .fas {
+    position: absolute;
+    color: red;
+    transition: 0.5s;
+    font-size: xxx-large;
+}
+
+.bands-col .fas:hover {
+    position: absolute;
+    color: orange;
+    text-shadow: 0 0 20px orange;
+    font-size: xxx-large;
+}
+
+.bands-col .fa-cog {
+    right: 30px;
+    bottom: 270px;
+}
+
+.bands-col .fa-minus-circle {
+    left: 30px;
+    bottom: 270px;
 }
 
 .text-box-band{
@@ -410,41 +460,3 @@ input {
 
 
 
-
-
-
-
-
-/*
-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-
-}
-section .bg-row{
-    position: relative;
-    width: 100%;
-    display: flex;
-    padding: 5px 0;
-    white-space: nowrap;
-    font-size: 65px;
-
-}
-section i {
-    color: rgba(0,0,0,0.5);
-    top: -50%;
-    transition: 1s;
-    padding: 0 5px;
-    user-select: none;
-    cursor: default;
-}
-section i:hover {
-    color: #f00;
-    text-shadow: 0 0 99px #ff0000;
-    transition: 0s;
-}
-*/

@@ -27,11 +27,15 @@
     foreach ($data['news'] as $new) {
         if ($counter % 3 == 0) {?>
             <div class="row">
-       <?php } ?>
-        <div class="news-col">
-            <h3> <?= $new->getTitle() ?></h3>
-            <p> <?= $new->getContent() ?></p>
-        </div>
+        <?php } ?>
+            <div class="news-col">
+                <h3> <?= $new->getTitle() ?></h3>
+                <p> <?= $new->getContent() ?></p>
+                <?php if (App\Auth::isLogged()) {?>
+                    <i class="fas fa-cog" ></i>
+                    <i class="fas fa-minus-circle"></i>
+                <?php } ?>
+            </div>
         <?php if ($counter % 3 == 2) { ?>
             </div>
         <?php }

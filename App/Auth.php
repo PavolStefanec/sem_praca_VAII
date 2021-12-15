@@ -28,7 +28,7 @@ class Auth
         return isset($_SESSION['userID']);
     }
 
-    public function getName()
+    public static function getName()
     {
         return (Auth::isLogged() ? $_SESSION['name'] . ' ' . $_SESSION['surname'] : "");
     }

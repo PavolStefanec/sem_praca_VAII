@@ -164,6 +164,9 @@ p{
     justify-content: space-between;
 }
 
+.news {
+}
+
 .news-col{
     position: relative;
     flex-basis: 25%;
@@ -175,6 +178,12 @@ p{
     box-sizing: border-box;
     transition: 0.5s;
 }
+
+.news-col p {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+
 .news-col:hover{
     box-shadow: 0 0 60px 0px rgba(200,200,200,0.8);
 }
@@ -201,6 +210,20 @@ p{
 .news-col .fa-minus-circle {
     left: 30px;
     bottom: 270px;
+}
+
+.news-col .fa-plus-circle {
+    position: absolute;
+    font-size: 1200%;
+    bottom: 80px;
+    left: 100px;
+}
+
+.news-col .fa-plus-circle:hover {
+    position: absolute;
+    font-size: 1200%;
+    bottom: 80px;
+    left: 100px;
 }
 
 .bands-tiles{
@@ -240,13 +263,27 @@ p{
 }
 
 .bands-col .fa-cog {
-    right: 30px;
+    left: 30px;
     bottom: 270px;
 }
 
 .bands-col .fa-minus-circle {
-    left: 30px;
+    right: 30px;
     bottom: 270px;
+}
+
+.bands-col .fa-plus-circle {
+    position: absolute;
+    font-size: 1200%;
+    bottom: 80px;
+    left: 100px;
+}
+
+.bands-col .fa-plus-circle:hover {
+    position: absolute;
+    font-size: 1200%;
+    bottom: 80px;
+    left: 100px;
 }
 
 .text-box-band{
@@ -326,6 +363,18 @@ p{
 .container .form-block {
     position: center;
     margin-bottom: 10%;
+}
+
+.form-block {
+    align-content: center;
+}
+
+.form-block textarea {
+    width: 100%;
+    height: 350px;
+    background-color: darkgray;
+    font-size: 20px;
+    font-weight: bolder;
 }
 
 .container {

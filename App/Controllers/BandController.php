@@ -39,7 +39,7 @@ class BandController extends AControllerRedirect
 
     public function bandPage()
     {
-        $id = $this->request()->getValue('parId');
+        $id = $this->request()->getValue('id');
         $band = Bands::getOne($id);
         $images = Bands_Imgs::getAll("id_band = ?", [$id]);
 
@@ -76,10 +76,11 @@ class BandController extends AControllerRedirect
 
     public function modifyForm()
     {
-        $bands = Bands::getAll();
+        $id = $this->request()->getValue('id');
+        $band = Bands::getOne($id);
         return $this->html(
             [
-                'bands' => $bands,
+                'band' => $band,
                 'error' => $this->request()->getValue('error')
             ]
         );
@@ -108,17 +109,6 @@ class BandController extends AControllerRedirect
         }
 
         $this->redirect('band', 'bands', ['message'=>'band successfully modified']);
-    }
-
-    public function deleteForm()
-    {
-        $bands = Bands::getAll();
-        return $this->html(
-            [
-                'bands' => $bands,
-                'error' => $this->request()->getValue('error')
-            ]
-        );
     }
 
     public function deleteBand()

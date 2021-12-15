@@ -15,25 +15,24 @@
 <section class="news">
     <h1>News</h1>
     <p>Updates every day</p>
-
-    <?php if (App\Auth::isLogged()) {?>
-        <a href="?c=home&a=bandForm" type="button" class="btn btn-primary">Add new</a>
-        <a href="?c=home&a=modifyNews" type="button" class="btn btn-primary">Modify</a>
-        <a href="?c=home&a=deleteNews" type="button" class="btn btn-primary">Delete</a>
-    <?php } ?>
-
     <?php
     $counter = 0;
-    foreach ($data['news'] as $new) {
+    for ($i = 0; $i < count($data['news']); $i++) {
         if ($counter % 3 == 0) {?>
             <div class="row">
         <?php } ?>
             <div class="news-col">
-                <h3> <?= $new->getTitle() ?></h3>
-                <p> <?= $new->getContent() ?></p>
-                <?php if (App\Auth::isLogged()) {?>
-                    <i class="fas fa-cog" ></i>
-                    <i class="fas fa-minus-circle"></i>
+                <?php if ($counter == 0 && App\Auth::isLogged()) {?>
+                    <a href="?c=news&a=newsForm"><i class="fas fa-plus-circle"></i></a>
+                    <?php $i--;?>
+                <?php } else {
+                    $news = $data['news'][$i]?>
+                    <h3> <?= $news->getTitle() ?></h3>
+                    <p> <?= $news->getContent() ?></p>
+                    <?php if (App\Auth::isLogged()) {?>
+                        <a href="?c=news&a=modifyForm&id=<?= $news->getId() ?>"><i class="fas fa-cog" ></i></a>
+                        <a href="?c=news&a=deleteNews&id=<?= $news->getId() ?>"><i class="fas fa-minus-circle"></i></a>
+                    <?php } ?>
                 <?php } ?>
             </div>
         <?php if ($counter % 3 == 2) { ?>

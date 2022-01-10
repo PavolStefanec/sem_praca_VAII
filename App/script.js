@@ -6,4 +6,3 @@ function showNav(){
 function hideNav(){
     navLinks.style.right = "-200px";
 }
-

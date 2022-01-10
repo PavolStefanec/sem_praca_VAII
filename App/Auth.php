@@ -1,13 +1,13 @@
 <?php
 
 namespace App;
-use \App\Models\Registration;
+use \App\Models\Users;
 
 class Auth
 {
     public static function login($username, $password)
     {
-        $allUsers = Registration::getAll();
+        $allUsers = Users::getAll();
         foreach ($allUsers as $user) {
             if ($username == $user->getUserName() && password_verify($password,  $user->getPassword())) {
                 $_SESSION['userID'] = $user->getId();

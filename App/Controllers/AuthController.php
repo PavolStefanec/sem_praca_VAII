@@ -2,7 +2,7 @@
 namespace App\Controllers;
 use App\Auth;
 use App\Core\Responses\Response;
-use App\Models\Registration;
+use App\Models\Users;
 
 class AuthController extends AControllerRedirect
 {
@@ -65,17 +65,17 @@ class AuthController extends AControllerRedirect
 
         if ($mail == "" or $name == "" or $surname == "" or $userName == "" or $password == "")
         {
-            $this->redirect('auth', 'registration', ['error'=>'One or more fields are empty!!!']);
+            $this->redirect('auth', 'users', ['error'=>'One or more fields are empty!!!']);
             return;
         }
 
-        if (Registration::isTaken($mail))
+        if (Users::isTaken($mail))
         {
-            $this->redirect('auth', 'registration', ['error'=>'This email is already taken!!!']);
+            $this->redirect('auth', 'users', ['error'=>'This email is already taken!!!']);
             return;
         }
 
-        $newUser = new Registration();
+        $newUser = new Users();
         $newUser->setName($name);
         $newUser->setMail($mail);
         $newUser->setSurname($surname);

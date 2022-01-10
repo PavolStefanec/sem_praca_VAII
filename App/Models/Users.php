@@ -4,7 +4,7 @@ namespace App\Models;
 
 use App\Core\Model;
 
-class Registration extends Model
+class Users extends Model
 {
     public function __construct(
         public int $id = 0,
@@ -24,7 +24,7 @@ class Registration extends Model
 
     static public function setTableName()
     {
-        return 'registration';
+        return 'users';
     }
 
     public static function isTaken($parMail)

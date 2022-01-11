@@ -6,6 +6,9 @@ use App\Config\Configuration;
 use App\Core\Responses\Response;
 use App\Models\Bands;
 use App\Models\Bands_Imgs;
+use http\Message;
+use App\Auth;
+use mysql_xdevapi\Exception;
 
 class BandController extends AControllerRedirect
 {
@@ -15,7 +18,13 @@ class BandController extends AControllerRedirect
      */
     public function index()
     {
-        // TODO: Implement index() method.
+        return $this->html();
+    }
+
+    public function getAllBands(){
+        $bands = Bands::getAll();
+        $logged = Auth::isLogged();
+        return $this->json([$bands, $logged]);
     }
 
     public function bands()
@@ -113,7 +122,11 @@ class BandController extends AControllerRedirect
 
     public function deleteBand()
     {
-        Bands::getOne($this->request()->getValue('id'))->delete();
-        $this->redirect('band', 'bands', ['message'=>'band successfully deleted']);
+        try {
+            Bands::getOne($this->request()->getValue('id'))->delete();
+            return $this->json("true");
+        } catch (Exception $e) {
+            return $this->json("false");
+        }
     }
 }

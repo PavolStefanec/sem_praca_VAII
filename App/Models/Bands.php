@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use http\Message;
+
 class Bands extends \App\Core\Model
 {
     public function __construct (

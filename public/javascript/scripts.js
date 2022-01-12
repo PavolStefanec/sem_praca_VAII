@@ -21,15 +21,14 @@ function getAllBands () {
         .then(data => {
             let html = "";
             let counter = 0;
+            html += '<div class="row">';
             for (let i = 0; i < data[0].length; i++) {
-                if (counter % 3 == 0)
-                    html += '<div class="row">';
 
                 html += '<div class="col-12 col-sm-12 col-md-6 col-lg-4"> ' +
                     '<div class="card bands-col">' +
                     '<div class="card-body">';
                 if (counter == 0 && data[1]) {
-                    html += '<div class="plus-b">' +
+                    html += '<div class="plus">' +
                         '<a class="addIcon" href="?c=band&a=bandForm"><i class="fas fa-plus-circle"></i></a>' +
                         '</div>';
                     i--;
@@ -38,11 +37,11 @@ function getAllBands () {
                     html += '<div class="cardIcons">';
                     if (data[1]) {
                         html += '<div class="row"> ' +
-                            '<div class="col-2 col-sm-2 col-md-2 col-lg-2 cog">' +
+                            '<div class="col-12 col-sm-6 col-md-6 col-lg-6 cog-b">' +
                             '<a href="?c=band&a=modifyForm&id=' + band['id'] + '"><i ' +
                             'class="fas fa-cog" ></i></a>' +
                             '</div>' +
-                            '<div class="col-2 col-sm-6 col-md-6 col-lg-2 minus">' +
+                            '<div class="col-12 col-sm-6 col-md-6 col-lg-6 minus-b">' +
                             '<i class="fas fa-minus-circle" onclick="deleteBand(' + band['id'] + ')"></i>' +
                             '</div> </div>';
                     }
@@ -54,11 +53,9 @@ function getAllBands () {
                 }
                 html += '</div> </div> </div>';
 
-                if (counter % 3 == 2) {
-                    html += '</div>';
-                }
                 counter++;
             }
+            html += '</div>';
             document.getElementById("content").innerHTML = html;
         });
 }

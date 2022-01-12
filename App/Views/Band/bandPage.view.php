@@ -1,10 +1,20 @@
 <?php /** @var Array $data */ ?>
 
+<div class="text-box">
+    <h1><?= $data['band']->getName() ?></h1>
+    <p>scroll down</p>
+    <div class="scroll-row">
+        <i class="fas fa-chevron-down"></i>
+        <i class="fas fa-chevron-down"></i>
+        <i class="fas fa-chevron-down"></i>
+        <i class="fas fa-chevron-down"></i>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</div>
+
 <div class="row">
     <div class="band-col">
         <div class="text-box-band">
-            <h1><?= $data['band']->getName() ?></h1>
-            <br>
             <h3>Bio</h3>
             <p class="band-info"><?= $data['band']->getBio() ?></p>
             <br>
@@ -32,7 +42,7 @@
                     <div class="carousel-item <?php if ($i == 0) { ?>active <?php } ?>">
                         <img src="<?= \App\Config\Configuration::UPLOAD_DIR . $data['images'][$i]->getImageSrc() ?>" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5><?= $data['images'][0]->getDesc() ?></h5>
+                            <h5><?= $data['images'][$i]->getDesc() ?></h5>
                         </div>
                     </div>
                 <?php } ?>

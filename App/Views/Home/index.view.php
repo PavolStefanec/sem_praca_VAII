@@ -20,9 +20,9 @@
     <?php
     $counter = 0;
     for ($i = 0; $i < count($data['news']); $i++) {
-        if ($counter % 3 == 0) {?>
-            <div class="row">
-        <?php } ?>
+//        if ($counter % 3 == 0) {?>
+<!--            <div class="row">-->
+<!--        --><?php //} ?>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="card news-col">
                     <div class="card-body">
@@ -35,11 +35,11 @@
                             $news = $data['news'][$i]?>
                             <div class="cardIcons">
                                 <?php if (App\Auth::isLogged()) {?>
-                                    <div class = "row">
-                                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 cog">
+                                    <div class = "row bands-icons">
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 cog">
                                             <a href="?c=news&a=modifyForm&id=<?= $news->getId() ?>"><i class="fas fa-cog" ></i></a>
                                         </div>
-                                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 minus">
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 minus">
                                             <a href="?c=news&a=deleteNews&id=<?= $news->getId() ?>"><i class="fas fa-minus-circle"></i></a>
                                         </div>
                                     </div>
@@ -53,9 +53,9 @@
                     </div>
                 </div>
             </div>
-        <?php if ($counter % 3 == 2) { ?>
-            </div>
-        <?php }
+<!--        --><?php //if ($counter % 3 == 2) { ?>
+<!--            </div>-->
+<!--        --><?php //}
             $counter++;
         ?>
     <?php } ?>

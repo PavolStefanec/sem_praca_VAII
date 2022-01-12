@@ -7,9 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="public/javascript/scripts.js"></script>
-    <style>
-        <?php include "public/css.css" ?>
-    </style>
+    <link rel="stylesheet" href="public/css.css">
     <script src="https://kit.fontawesome.com/7558fd3819.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -21,7 +19,6 @@
             <ul>
                 <li><a href="?c=home">HOME</a></li>
                 <li><a href="?c=band&a=bands">BANDS</a></li>
-                <li><a href="?c=shop&a=shop">SHOP</a></li>
                 <li><a href="?c=home&a=about">ABOUT</a></li>
                 <li><a href="?c=home&a=contact">CONTACT</a></li>
                 <?php if (!App\Auth::isLogged()) {?>

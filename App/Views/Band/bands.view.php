@@ -13,7 +13,7 @@
 </div>
 
 <section class="bands-tiles">
-    <h1>Bands</h1>
+    <h1 class="bands-center">Bands</h1>
     <div id="content"></div>
 
 

@@ -15,6 +15,7 @@ body {
 .header {
     min-height: 100vh;
     width: 100%;
+    margin-top: -3%;
     position: relative;
 }
 
@@ -118,9 +119,6 @@ p{
     margin: auto;
 }
 
-.cardIcons {
-    margin-left: 0;
-}
 .news-col{
     flex-basis: 25%;
     background: #303030;
@@ -142,12 +140,28 @@ p{
 }
 
 .minus {
+    position: absolute;
     text-align: right;
     margin-top: -6%;
 }
 
 .cog {
+    position: absolute;
     margin-top: -6%;
+    text-align: left;
+}
+
+.minus-b {
+    position: absolute;
+    text-align: right;
+    margin-top: -13%;
+    margin-left: 46%;
+}
+
+.cog-b {
+    position: absolute;
+    margin-top: -13%;
+    margin-left: -4%;
 }
 
 .news-col .fas {
@@ -171,6 +185,11 @@ div.card-body {
     text-align: center;
     margin-top: -5px;
 }
+
+.bands-tiles .plus {
+    margin-top: -10%;
+}
+
 .cardText{
     text-align: center;
     margin-top: -20px;
@@ -178,19 +197,14 @@ div.card-body {
     margin-right: 40px;
 }
 
-.fa-plus-circle {
-    font-size: 1000%;
-}
-
-.fa-plus-circle:hover {
-    font-size: 1000%;
-}
-
 .bands-tiles{
     width: 85%;
     margin: auto;
-    text-align: center;
     padding-top: 100px;
+}
+
+.bands-center {
+    text-align: center;
 }
 
 .bands-col{
@@ -222,33 +236,9 @@ div.card-body {
     font-size: xxx-large;
 }
 
-/*.bands-col .cog {*/
-/*    margin-left: -5%;*/
-/*}*/
-
-/*.bands-col .fa-cog {*/
-/*    left: 1%;*/
-/*    top: 85%;*/
-/*}*/
-
-/*.bands-col .fa-minus-circle {*/
-/*    right: 1%;*/
-/*    top: 85%;*/
-/*}*/
-
-/*.bands-col .fa-plus-circle {*/
-/*    position: absolute;*/
-/*    font-size: 1200%;*/
-/*    bottom: 25%;*/
-/*    left: 20%;*/
-/*}*/
-
-/*.bands-col .fa-plus-circle:hover {*/
-/*    position: absolute;*/
-/*    font-size: 1200%;*/
-/*    bottom: 25%;*/
-/*    left: 20%;*/
-/*}*/
+.bands-tiles a {
+    text-align: center;
+}
 
 .text-box-band{
     width: 90%;
@@ -272,6 +262,32 @@ div.card-body {
 .band-info{
     font-size: x-large;
     font-weight: normal;
+}
+
+.contact {
+    height: auto;
+    width: 80%;
+    position: relative;
+    background: #303030;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    opacity: 75%;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.contact a {
+    color: orange;
+}
+
+.contact-block {
+    position: relative;
+}
+
+.contact-img img{
+    width: 80%;
+    height: 60%;
 }
 
 .carousel {
@@ -375,7 +391,6 @@ div.card-body {
     overflow-wrap: break-word;
 }
 
-/* Style all input fields */
 input {
     width: 100%;
     padding: 12px;
@@ -386,12 +401,10 @@ input {
     margin-bottom: 16px;
 }
 
-/* Style the container for inputs */
 .container {
     padding: 20px;
 }
 
-/* The message box is shown when the user clicks on the password field */
 #message {
     color: #000;
     position: relative;

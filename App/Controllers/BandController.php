@@ -124,6 +124,10 @@ class BandController extends AControllerRedirect
     {
         try {
             Bands::getOne($this->request()->getValue('id'))->delete();
+            $imgs = Bands_Imgs::getAll("id_band = ?", [$this->request()->getValue('id')]);
+            foreach ($imgs as $value) {
+                $value->delete();
+            }
             return $this->json("true");
         } catch (Exception $e) {
             return $this->json("false");

@@ -31,6 +31,10 @@
                     <input class="form-control" type="file" name="logo" id="formFile" required>
                 </div>
                 <div class="mb-3">
+                    <label for="formFile" class="form-label">Band pictures</label>
+                    <input class="form-control" type="file" name="file[]" id="band_imgs" multiple >
+                </div>
+                <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Bio</label>
                     <textarea class="form-control" name="bio" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>

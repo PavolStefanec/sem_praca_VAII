@@ -77,8 +77,20 @@ class BandController extends AControllerRedirect
         $newBand->setMembers($members);
         $newBand->setDiscography($disco);
         $newBand->setLogoSrc($file);
-
         $newBand->save();
+
+        $bandID = Bands::getAll("name = ?", [$name])[0]->getId();
+
+        for ($i = 0; $i < count($_FILES['file']['name']); $i++) {
+            if ($_FILES['file']['error'][$i] == UPLOAD_ERR_OK) {
+                $newImg = new Bands_Imgs();
+                $newImg->setIdBand($bandID);
+                $file = date('Y-a-d-H-i-s') . $_FILES['file']['name'][$i];
+                move_uploaded_file($_FILES['file']['tmp_name'][$i], Configuration::UPLOAD_DIR . "$file");
+                $newImg->setImageSrc($file);
+                $newImg->save();
+            }
+        }
 
         $this->redirect('band', 'bands', ['message'=>'band successfully added']);
     }

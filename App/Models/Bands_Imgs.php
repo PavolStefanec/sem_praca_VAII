@@ -10,14 +10,13 @@ class Bands_Imgs extends Model
         public int $id = 0,
         public int $id_band = 0,
         public ?string $image_src = null,
-        public ?string $desc = null
     )
     {
     }
 
 static public function setDbColumns()
 {
-    return ['id', 'id_band', 'image_src', 'desc'];
+    return ['id', 'id_band', 'image_src'];
 }
 
 static public function setTableName()
@@ -71,21 +70,5 @@ static public function setTableName()
     public function setImageSrc(?string $image_src): void
     {
         $this->image_src = $image_src;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getDesc(): ?string
-    {
-        return $this->desc;
-    }
-
-    /**
-     * @param string|null $desc
-     */
-    public function setDesc(?string $desc): void
-    {
-        $this->desc = $desc;
     }
 }

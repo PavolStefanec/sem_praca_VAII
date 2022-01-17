@@ -42,7 +42,6 @@
                     <div class="carousel-item <?php if ($i == 0) { ?>active <?php } ?>">
                         <img src="<?= \App\Config\Configuration::UPLOAD_DIR . $data['images'][$i]->getImageSrc() ?>" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5><?= $data['images'][$i]->getDesc() ?></h5>
                         </div>
                     </div>
                 <?php } ?>

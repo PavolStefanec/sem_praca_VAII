@@ -13,7 +13,7 @@
 <body>
 <section class="header">
     <nav>
-        <a href="?c=home"><img src= "<?= \App\Config\Configuration::UPLOAD_DIR . 'logo.png'?>" alt="logo"></a>
+        <a href="?c=home"><img src= "<?= \App\Config\Configuration::UPLOAD_DIR . 'logo.png'?>" alt="logo" class="logo-img"></a>
         <div class="nav-links" id="navLinks">
             <i class="fas fa-times-circle" onclick="hideNav()"></i>
             <ul>

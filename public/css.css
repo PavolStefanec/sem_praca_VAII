@@ -19,6 +19,10 @@ body {
     position: relative;
 }
 
+.logo-img {
+    margin-top: 5%;
+}
+
 nav {
     display: flex;
     padding: 2% 6%;

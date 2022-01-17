@@ -56,7 +56,7 @@ function getAllBands () {
                 counter++;
             }
             html += '</div>';
-            document.getElementById("content").innerHTML = html;
+            document.getElementById("bands-content").innerHTML = html;
         });
 }
 

@@ -14,7 +14,7 @@
 
 <section class="bands-tiles">
     <h1 class="bands-center">Bands</h1>
-    <div id="content"></div>
+    <div id="bands-content"></div>
 
 
 </section>

@@ -39,12 +39,12 @@
                     <textarea class="form-control" name="bio" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Members</label>
-                    <textarea class="form-control" name="members" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="exampleFormControlTextarea2" class="form-label">Members</label>
+                    <textarea class="form-control" name="members" id="exampleFormControlTextarea2" rows="3"></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlInput2" class="form-label">DiscoGraphy</label>
-                    <textarea class="form-control" name="disco" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="exampleFormControlTextarea3" class="form-label">DiscoGraphy</label>
+                    <textarea class="form-control" name="disco" id="exampleFormControlTextarea3" rows="3"></textarea>
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary">Add band</button>

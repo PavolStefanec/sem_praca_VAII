@@ -28,16 +28,16 @@
                     <input class="form-control" type="file" name="logo" id="formFile">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlInput2" class="form-label">Bio</label>
+                    <label for="exampleFormControlTextarea1" class="form-label">Bio</label>
                     <textarea class="form-control" name="bio" id="exampleFormControlTextarea1" rows="3"><?= $data['band']->getBio()?></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlInput2" class="form-label">Members</label>
-                    <textarea class="form-control" name="members" id="exampleFormControlTextarea1" rows="3"><?= $data['band']->getMembers()?></textarea>
+                    <label for="exampleFormControlTextarea2" class="form-label">Members</label>
+                    <textarea class="form-control" name="members" id="exampleFormControlTextarea2" rows="3"><?= $data['band']->getMembers()?></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlInput2" class="form-label">DiscoGraphy</label>
-                    <textarea class="form-control" name="disco" id="exampleFormControlTextarea1" rows="3"><?= $data['band']->getDiscography()?></textarea>
+                    <label for="exampleFormControlTextarea3" class="form-label">DiscoGraphy</label>
+                    <textarea class="form-control" name="disco" id="exampleFormControlTextarea3" rows="3"><?= $data['band']->getDiscography()?></textarea>
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary">Modify</button>

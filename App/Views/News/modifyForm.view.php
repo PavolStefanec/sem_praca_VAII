@@ -24,11 +24,11 @@
 
             <form method="post" action="?c=news&a=modifyNews&id=<?=$data['news']->getId() ?>">
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Title</label>
+                    <label for="title" class="form-label">Title</label>
                     <input type="text" class="form-control" name="title" id="title" value="<?= $data['news']->getTitle()?>">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlInput2" class="form-label">Content</label>
+                    <label for="content" class="form-label">Content</label>
                     <textarea class="form-control" name="content" id="content" rows="3"><?= $data['news']->getContent()?></textarea>
                 </div>
                 <div class="mb-3">

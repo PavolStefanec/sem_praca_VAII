@@ -11,7 +11,7 @@
                     <p>find us on this address: <a href="https://goo.gl/maps/ckuZBDwd7bZDJHWF9">Univerzitná 8215/1, 010 26 Žilina, Slovensko</a> </p>
                 </div>
                 <div class="contact-img">
-                    <img src="public/files/fri.jpg">
+                    <img src="public/files/fri.jpg" alt="image">
                 </div>
             </div>
         </div>
